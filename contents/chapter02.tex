@@ -1,0 +1,72 @@
+% !TeX root = ../main.tex
+
+\chapter{Related Work}\label{chap:template}
+
+\section{Autonomous Robotic Inspection and Environmental Hazard Monitoring}
+Autonomous robotic inspection has attracted increasing attention in industrial environments, enabling mobile robots to perform routine monitoring tasks and reduce human exposure to potentially hazardous conditions.
+Martins et al. \cite{martins2026quadruped} conducted a systematic literature review of autonomous industrial inspection using quadrupedal robots, highlighting the limited integration of inspection-driven mission replanning in existing systems.
+Although autonomous navigation and environmental monitoring have been widely investigated, adapting robot behavior based on inspection outcomes remains an important research challenge.
+
+Several studies have investigated autonomous inspection and environmental hazard monitoring.
+Konstantinidis et al. \cite{konstantinidis2022arowa} proposed AROWA, a robotic framework for warehouse safety inspection that detects hazardous events and activates corresponding notification modules.
+Munguia-Galeano et al. \cite{munguia2026chemist} introduced Chemist Eye, which employs vision-language models and multimodal sensing for laboratory safety monitoring and hazard-related response.
+Beyond hazard detection, Ginting et al. \cite{ginting2024sb2g} proposed the Semantic Belief Behavior Graph (SB2G), which incorporates semantic beliefs and active search behaviors to enable autonomous inspection in unknown environments.
+
+These studies demonstrate the potential of autonomous robots for environmental monitoring, hazard detection, and adaptive inspection.
+However, existing approaches primarily focus on detecting hazardous events, executing predefined responses, or searching for target objects.
+Active acquisition of additional visual evidence to resolve uncertain anomaly assessments remains less explored.
+This motivates the development of an inspection framework that integrates anomaly detection, uncertainty-aware active perception, and appropriate robotic responses.
+
+\section{Active Perception and Viewpoint Planning}
+Active perception enables robots to improve environmental understanding by actively controlling their observation viewpoints.
+In robotic inspection, viewpoint planning is particularly important when limited visibility, occlusion, or unfavorable viewing angles prevent reliable observations.
+Existing approaches have investigated various objectives, including geometric coverage, information gain, and task-specific visibility.
+
+Bircher et al. \cite{bircher2017inspection} proposed a sampling-based inspection planning method to achieve sufficient coverage of target structures.
+Dharmadhikari and Alexis \cite{dharmadhikari2023semantics} further incorporated semantic information into exploration and inspection planning, enabling robots to prioritize observations of relevant objects and surfaces.
+Schmid et al. \cite{schmid2020informative} investigated informative path planning based on expected information gain, while Tao et al. \cite{tao2023seer} introduced SEER, which employs learned information-gain predictions to guide efficient exploration.
+These approaches demonstrate how viewpoint selection can improve environmental coverage and information acquisition.
+
+More recently, Kuhlmann et al. \cite{kuhlmann2026sight} proposed Sight Over Site, a perception-aware reinforcement learning framework that enables robots to navigate toward viewpoints from which inspection targets become visible.
+Unlike conventional navigation methods that focus on reaching designated locations, this approach emphasizes target observability as the inspection objective.
+However, existing geometric and exploration-oriented methods primarily optimize visibility or spatial information acquisition, which does not necessarily guarantee sufficient visual evidence for reliable anomaly assessment.
+This motivates the investigation of task-driven viewpoint selection for environmental hazard verification.
+
+\section{Uncertainty-Aware Active Visual Inspection}
+Recent studies have extended active perception by incorporating uncertainty and downstream perception performance into viewpoint selection.
+Rather than maximizing geometric visibility alone, these methods aim to acquire observations that improve recognition, segmentation, or inspection reliability.
+
+Tang and Jahanshahi \cite{tang2025uncertainty} proposed UADS-DRL, an uncertainty-aware active vision framework that selects viewpoints based on damage segmentation uncertainty.
+Wang and Wu \cite{wang2026activeinspect} introduced ActiveInspect, which employs vision-language models and reinforcement learning to select informative evidence from multiple observations for industrial defect detection.
+Similarly, Yang and Jing \cite{yang2026closedloop} developed a closed-loop inspection framework that adjusts camera viewpoints according to defect detection confidence.
+These studies demonstrate the potential of uncertainty-guided observation selection for improving inspection performance.
+
+However, existing approaches primarily focus on specific defect categories, constrained inspection environments, or selecting observations from previously acquired data.
+Their application to mobile robotic inspection of diverse environmental hazards remains less explored.
+In particular, physically repositioning a robot to resolve ambiguous anomaly assessments requires considering observation utility, navigation feasibility, and the reliability of the resulting decisions.
+
+\section{Risk-Aware Response and Robotic Response}
+Beyond anomaly detection, autonomous inspection robots must determine appropriate actions based on the observed environmental conditions.
+Different hazards may require different responses depending on their severity, potential consequences, and the reliability of the available information.
+
+Existing robotic inspection frameworks have investigated the integration of perception and response mechanisms.
+AROWA \cite{konstantinidis2022arowa} incorporates event-triggered modules to notify workers and external systems following hazard detection.
+Chemist Eye \cite{munguia2026chemist} employs vision-language models to support safety-related decisions in laboratory environments.
+Furthermore, SB2G \cite{ginting2024sb2g} utilizes semantic belief information to coordinate inspection behaviors, allowing robotic actions to adapt to environmental observations.
+These studies demonstrate the feasibility of connecting perception outcomes with autonomous robotic behaviors.
+
+Nevertheless, selecting appropriate responses under perceptual uncertainty remains an important challenge.
+Li et al. \cite{li2026activevisual} highlighted the importance of task-driven evidence acquisition and practical sensing constraints in active visual perception.
+For environmental hazard inspection, robotic decisions should consider not only the detected anomaly and its severity but also the uncertainty of the assessment and the potential risks associated with subsequent actions.
+This motivates a context-aware response framework that integrates hazard assessment, additional observation, and appropriate safety measures.
+
+\section{Research Summary and Positioning}
+Existing research has established important foundations for autonomous robotic inspection, active perception, and environmental hazard monitoring.
+Autonomous inspection systems have demonstrated capabilities in environmental monitoring, semantic understanding, and event-triggered responses.
+Meanwhile, viewpoint planning and uncertainty-aware inspection methods have shown that actively acquiring additional observations can improve visibility and downstream perception performance.
+
+However, these capabilities are often investigated under different task assumptions and system configurations.
+In particular, the integration of uncertainty-driven viewpoint selection, reliable anomaly assessment, and subsequent robotic responses remains an important research direction for autonomous environmental inspection.
+
+Motivated by these limitations, this thesis investigates a closed-loop robotic inspection framework that integrates a two-stage anomaly detection pipeline, uncertainty-aware active verification, and context-aware response selection.
+The objective is to enable a mobile robot to acquire additional visual evidence when necessary, improve the reliability of environmental hazard assessments, and select appropriate actions based on the resulting observations.
